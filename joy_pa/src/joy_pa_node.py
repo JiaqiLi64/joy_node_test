@@ -18,8 +18,8 @@ def concatenator(data):
 		rate.sleep()
 
 def start():
-	rospy.Subscriber("joy", Joy, concatenator)
 	pub = rospy.Publisher('y_axis', String, queue_size=10)
+	rospy.Subscriber("joy", Joy, concatenator)
 	rospy.init_node('joy_pa_node')
 	rospy.spin()
 
